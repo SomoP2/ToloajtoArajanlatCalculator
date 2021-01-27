@@ -1,7 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UiController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.UiController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="Új Árajánlat" />
+                  <MenuItem mnemonicParsing="false" text="Élő Árajánlatok" />
+                  <MenuItem mnemonicParsing="false" text="LezártÁrajánlatok" />
+              <MenuItem mnemonicParsing="false" text="Bezárás" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <Pane prefHeight="476.0" prefWidth="568.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="233.0" layoutX="354.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../pictures/FcsLogo.png" />
+               </image>
+               <effect>
+                  <Reflection fraction="0.6" topOffset="-10.0" topOpacity="0.48" />
+               </effect>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="118.0" layoutX="436.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../pictures/scrigno-tech_logo.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" layoutX="5.0" layoutY="14.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" text="Új árajánlat">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox layoutX="5.0" layoutY="114.0" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: lightgrey; -fx-border-color: grey; -fx-border-width: 2;">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Text fill="#18ad10cc" stroke="#346125d9" strokeType="OUTSIDE" strokeWidth="0.1" text="Élő Ajánlatok:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="96.0" prefWidth="110.0">
+                     <children>
+                        <Text fill="#6aff00" stroke="#398321" strokeType="OUTSIDE" strokeWidth="0.35" text="0">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Text>
+                     </children></HBox>
+               </children>
+            </HBox>
+            <HBox layoutX="5.0" layoutY="160.0" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: lightgrey; -fx-border-color: grey; -fx-border-width: 2;">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Text fill="#2245a4" stroke="#20285bd9" strokeType="OUTSIDE" strokeWidth="0.1" text="Lezárt Ajánlatok:">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="96.0" prefWidth="110.0">
+                     <children>
+                        <Text fill="#0ca1b5" stroke="#07103c" strokeType="OUTSIDE" strokeWidth="0.1" text="0">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </left>
 </BorderPane>
