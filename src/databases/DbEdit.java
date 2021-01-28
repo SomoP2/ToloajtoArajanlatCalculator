@@ -18,30 +18,29 @@ import java.util.ArrayList;
 
 public class DbEdit {
 
-// todo az egészet újracsinálni hogy változtatható legyen az adatbázis	
-//csak x mennyiségű adatbázis lesz fix oszlopokkal, szal itt helyben lehet választani köztük egy listából
+// TODO az egészet újracsinálni hogy változtatható legyen az adatbázis	
+// csak néhány adatbázis lesz fix oszlopokkal, szal itt helyben lehet választani köztük egy listából
 
 // 	elso feltoltes kesobb kell add/remove/edit
-	private static String[] telepulesek= {"Telepulesek","IRSZ","NAME"};
+	private static String[] telepulesek = { "Telepulesek", "IRSZ", "NAME" };
 	private static Connection con;
 
 	private void getConnection() throws ClassNotFoundException, SQLException { // csatlakozik az adatbázishoz,
 
 		Class.forName("org.sqlite.JDBC");
 		con = DriverManager.getConnection("jdbc:sqlite:src/databases/Telepulesek.db");
-
 	}
 
 	private ResultSet displayDb(String[] data) throws ClassNotFoundException, SQLException {
 		if (con == null) {
 			getConnection();
-		}	
+		}
 		String stQquery = "SELECT @ROW1, @ROW2 FROM @TABLE";
-		
-		String[] queryToReplace= {"@TABLE","@ROW1","@ROW2"};
-		String query=stQquery;
+
+		String[] queryToReplace = { "@TABLE", "@ROW1", "@ROW2" };
+		String query = stQquery;
 		for (int i = 0; i < telepulesek.length; i++) {
-			query=query.replace(queryToReplace[i], data[i]);
+			query = query.replace(queryToReplace[i], data[i]);
 		}
 
 		Statement state = con.createStatement();
@@ -56,8 +55,8 @@ public class DbEdit {
 			getConnection();
 		}
 		String stQquery = "INSERT INTO @TABLE(@ROW, @ROW2) values(?,?);	";
-		String[] queryToReplace= {"@TABLE","@ROW1","@ROW2"};
-		String query=stQquery;
+		String[] queryToReplace = { "@TABLE", "@ROW1", "@ROW2" };
+		String query = stQquery;
 		PreparedStatement prep = con.prepareStatement(query);
 
 		prep.setInt(1, IRSZ);
@@ -69,7 +68,9 @@ public class DbEdit {
 			
 		DbEdit dbed = new DbEdit();
 		ResultSet rs;
-		//feltolt
+	
+////feltolt
+//	
 //		try {
 //			BufferedReader fill2 = new BufferedReader(new InputStreamReader(
 //					new FileInputStream("src/databases/Telepulesek.txt"), StandardCharsets.UTF_8));
@@ -85,11 +86,12 @@ public class DbEdit {
 //			}
 //			fill2.close();
 //		} catch (IOException | NumberFormatException | ClassNotFoundException | SQLException e1) {
-//			// TODO Auto-generated catch block
+//			
 //			e1.printStackTrace();
 //		}
-
+//
 //display konzolra
+
 		try {
 			rs = dbed.displayDb(telepulesek);
 		
@@ -97,7 +99,7 @@ public class DbEdit {
 				System.out.println(rs.getString("IRSZ") + " " + rs.getString("NAME"));
 			}
 		} catch (SQLException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}
