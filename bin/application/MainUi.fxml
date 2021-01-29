@@ -56,14 +56,14 @@
             </ImageView>
             <HBox alignment="CENTER" layoutX="5.0" layoutY="14.0" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="newQuote" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#createNewQuote" prefHeight="40.0" prefWidth="100.0" text="Új árajánlat">
+                  <Button fx:id="newQuote" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#createNewQuote" prefHeight="40.0" prefWidth="100.0" text="Új árajánlat" textFill="WHITE">
                      <font>
                         <Font name="Calibri Bold" size="16.0" />
                      </font>
                   </Button>
                </children>
             </HBox>
-            <HBox layoutX="5.0" layoutY="114.0" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: lightgrey; -fx-border-color: grey; -fx-border-width: 2;">
+            <HBox layoutX="5.0" layoutY="114.0" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
                <children>
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>
@@ -84,7 +84,7 @@
                      </children></HBox>
                </children>
             </HBox>
-            <HBox layoutX="5.0" layoutY="160.0" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: lightgrey; -fx-border-color: grey; -fx-border-width: 2;">
+            <HBox layoutX="5.0" layoutY="160.0" prefHeight="36.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
                <children>
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                      <children>

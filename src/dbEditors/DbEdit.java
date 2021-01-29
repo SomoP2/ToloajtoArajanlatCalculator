@@ -1,4 +1,4 @@
-package databases;
+package dbEditors;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -28,7 +28,7 @@ public class DbEdit {
 	private void getConnection() throws ClassNotFoundException, SQLException { // csatlakozik az adatbázishoz,
 
 		Class.forName("org.sqlite.JDBC");
-		con = DriverManager.getConnection("jdbc:sqlite:src/databases/Telepulesek.db");
+		con = DriverManager.getConnection("jdbc:sqlite:databases/Telepulesek.db");
 	}
 
 	private ResultSet displayDb(String[] data) throws ClassNotFoundException, SQLException {
